@@ -28,6 +28,9 @@ int main(){
     // index
     float val = b[0][0];
 
+    // transpose
+    b = b.transpose();
+
     // concatenate
     Matrix x = b.cat(c, 0);     // concatenate matrices along axis 0
     Matrix y = a.cat(b, 1);     // concatenate matrices along axis 1
@@ -35,11 +38,19 @@ int main(){
     Matrix sum = b + c;         // element-wise addition
     Matrix diff = b - c;        // element-wise subtraction
     Matrix prod = b * c;        // element-wise multiplication
+    Matrix quot = b / b;        // element-wise division
 
     // compound assignment operator
     b += c;
     b -= c;
     b *= c;
+    a /= a;
+
+    // operations with scalar;
+    a = a + 1;
+    b = 4.11 - b;
+    c *= 6;
+    x = y / 2.0;
 
     // matrix multiplication
     Matrix mat_prod = b.matmul(c);
